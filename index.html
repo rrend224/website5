@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Whale's Tail</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: sans-serif;
+      background-color: #1f2116;
+      color: #fff;
+      line-height: 1.6;
+    }
+    header {
+      background: url('top-image.jpg') no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2em;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 1em;
+    }
+    section {
+      padding: 4em 2em;
+    }
+    .intro {
+      background-color: #e4d5be;
+      color: #000;
+      text-align: center;
+    }
+    .parallax-half {
+      background: url('middle-parallax.jpg') no-repeat center center fixed;
+      background-size: cover;
+      height: 400px;
+      margin: 2em auto;
+      width: 90%;
+      max-width: 1000px;
+    }
+    .special {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .special-text {
+      width: 45%;
+    }
+    .parallax-side {
+      background: url('side-parallax.jpg') no-repeat center center fixed;
+      background-size: cover;
+      width: 45%;
+      height: 300px;
+    }
+    .highlight {
+      text-align: center;
+      padding: 4em 2em;
+    }
+    .highlight img {
+      width: 100%;
+      max-width: 600px;
+      margin: 2em auto;
+      display: block;
+    }
+    .event {
+      text-align: center;
+      padding: 4em 2em;
+    }
+    .footer-parallax {
+      background: url('footer-parallax.jpg') no-repeat center center fixed;
+      background-size: cover;
+      height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .footer-parallax div {
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #000;
+      padding: 2em;
+      border-radius: 50%;
+      width: 250px;
+      height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    footer {
+      background-color: #12130d;
+      padding: 2em;
+      text-align: center;
+      font-size: 0.8em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Drink, Eat, Enjoy.</h1>
+  </header>
+
+  <section class="intro">
+    <h2>くつろぎのひと時</h2>
+    <p>プレミアムビール、美味しいワイン、心温まるお食事をお楽しみください</p>
+  </section>
+
+  <div class="parallax-half"></div>
+
+  <section class="special">
+    <div class="special-text">
+      <h3>今月のスペシャル</h3>
+      <p>今月のお勧めブルガリアンビールをお試しください</p>
+    </div>
+    <div class="parallax-side"></div>
+  </section>
+
+  <section class="highlight">
+    <h2>喜び溢れる時間</h2>
+    <img src="highlight.jpg" alt="Bar lighting and bottles">
+  </section>
+
+  <section class="event">
+    <h3>イベント情報</h3>
+    <p>現在予定のイベントはありません</p>
+  </section>
+
+  <div class="footer-parallax">
+    <div>
+      <p>お気軽にお立ち寄りください</p>
+      <p>営業時間<br>月〜日 17:00〜1:00</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; The Whale's Tail - All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -16,8 +16,114 @@
       color: #fff;
       line-height: 1.6;
     }
+    
+    /* ナビゲーションメニュー */
+    .nav-container {
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 1000;
+    }
+    
+    .hamburger {
+      display: block;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 35px;
+      height: 30px;
+      cursor: pointer;
+      z-index: 1001;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 5px;
+      padding: 5px;
+    }
+    
+    .hamburger span {
+      display: block;
+      position: relative;
+      width: 25px;
+      height: 3px;
+      margin: 4px auto;
+      background-color: #fff;
+      transition: all 0.3s ease-in-out;
+    }
+    
+    .nav-menu {
+      position: fixed;
+      top: 0;
+      right: -300px;
+      width: 300px;
+      height: 100vh;
+      background-color: rgba(31, 33, 22, 0.95);
+      padding-top: 80px;
+      transition: right 0.3s ease-in-out;
+      z-index: 999;
+      box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+    }
+    
+    .nav-menu.active {
+      right: 0;
+    }
+    
+    .nav-menu ul {
+      list-style: none;
+    }
+    
+    .nav-menu ul li {
+      margin: 20px 0;
+      text-align: center;
+    }
+    
+    .nav-menu ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2em;
+      display: block;
+      padding: 10px;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-menu ul li a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      transform: translateX(-10px);
+    }
+    
+    /* ハンバーガーメニューがアクティブのときのアイコン変化 */
+    .hamburger.active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+    
+    /* オーバーレイ */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 998;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
     header {
-      background: url('img5/1.jpg') no-repeat center center fixed;
+      background: url('img5/1.jpg') no-repeat center center;
+      background-attachment: fixed;
       background-size: cover;
       height: 100vh;
       display: flex;
@@ -29,6 +135,7 @@
       font-size: 2em;
       background: rgba(0, 0, 0, 0.5);
       padding: 1em;
+      max-width: 90%;
     }
     section {
       padding: 4em 2em;
@@ -38,8 +145,12 @@
       color: #000;
       text-align: center;
     }
+    .intro h2 {
+      margin-bottom: 0.5em;
+    }
     .parallax-half {
-      background: url('img5/2.jpg') no-repeat center center fixed;
+      background: url('img5/2.jpg') no-repeat center center;
+      background-attachment: fixed;
       background-size: cover;
       height: 400px;
       margin: 2em auto;
@@ -51,12 +162,17 @@
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
+      gap: 2em;
     }
     .special-text {
       width: 45%;
     }
+    .special-text h3 {
+      margin-bottom: 0.5em;
+    }
     .parallax-side {
-      background: url('img5/3.jpg') no-repeat center center fixed;
+      background: url('img5/3.jpg') no-repeat center center;
+      background-attachment: fixed;
       background-size: cover;
       width: 45%;
       height: 300px;
@@ -64,6 +180,9 @@
     .highlight {
       text-align: center;
       padding: 4em 2em;
+    }
+    .highlight h2 {
+      margin-bottom: 1em;
     }
     .highlight img {
       width: 100%;
@@ -75,8 +194,12 @@
       text-align: center;
       padding: 4em 2em;
     }
+    .event h3 {
+      margin-bottom: 0.5em;
+    }
     .footer-parallax {
-      background: url('img5/4.jpg') no-repeat center center fixed;
+      background: url('img5/4.jpg') no-repeat center center;
+      background-attachment: fixed;
       background-size: cover;
       height: 400px;
       display: flex;
@@ -102,21 +225,115 @@
       text-align: center;
       font-size: 0.8em;
     }
+
+    /* Media Queries for Responsive Design */
+    @media screen and (max-width: 768px) {
+      header h1 {
+        font-size: 1.8em;
+        padding: 0.8em;
+      }
+      
+      section {
+        padding: 3em 1.5em;
+      }
+      
+      .special {
+        flex-direction: column;
+      }
+      
+      .special-text, .parallax-side {
+        width: 100%;
+      }
+      
+      .parallax-side {
+        height: 250px;
+        margin-top: 1em;
+      }
+      
+      .footer-parallax div {
+        width: 200px;
+        height: 200px;
+        padding: 1.5em;
+      }
+      
+      .nav-menu {
+        width: 250px;
+        right: -250px;
+      }
+    }
+    
+    @media screen and (max-width: 480px) {
+      header h1 {
+        font-size: 1.5em;
+        padding: 0.7em;
+      }
+      
+      section {
+        padding: 2em 1em;
+      }
+      
+      .parallax-half {
+        height: 300px;
+      }
+      
+      .parallax-side {
+        height: 200px;
+      }
+      
+      .footer-parallax div {
+        width: 180px;
+        height: 180px;
+        padding: 1em;
+        font-size: 0.9em;
+      }
+      
+      .nav-menu {
+        width: 220px;
+        right: -220px;
+      }
+    }
+    
+    /* Fix for parallax on mobile devices */
+    @media (hover: none) {
+      header, .parallax-half, .parallax-side, .footer-parallax {
+        background-attachment: scroll;
+      }
+    }
   </style>
 </head>
 <body>
-  <header>
+  <!-- ハンバーガーメニュー -->
+  <div class="nav-container">
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="#home">ホーム</a></li>
+        <li><a href="#intro">くつろぎのひと時</a></li>
+        <li><a href="#special">今月のスペシャル</a></li>
+        <li><a href="#highlight">喜び溢れる時間</a></li>
+        <li><a href="#event">イベント情報</a></li>
+        <li><a href="#contact">営業時間・アクセス</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="overlay"></div>
+
+  <header id="home">
     <h1>Drink, Eat, Enjoy.</h1>
   </header>
 
-  <section class="intro">
+  <section class="intro" id="intro">
     <h2>くつろぎのひと時</h2>
     <p>プレミアムビール、美味しいワイン、心温まるお食事をお楽しみください</p>
   </section>
 
   <div class="parallax-half"></div>
 
-  <section class="special">
+  <section class="special" id="special">
     <div class="special-text">
       <h3>今月のスペシャル</h3>
       <p>今月のお勧めブルガリアンビールをお試しください</p>
@@ -124,17 +341,17 @@
     <div class="parallax-side"></div>
   </section>
 
-  <section class="highlight">
+  <section class="highlight" id="highlight">
     <h2>喜び溢れる時間</h2>
     <img src="highlight.jpg" alt="Bar lighting and bottles">
   </section>
 
-  <section class="event">
+  <section class="event" id="event">
     <h3>イベント情報</h3>
     <p>現在予定のイベントはありません</p>
   </section>
 
-  <div class="footer-parallax">
+  <div class="footer-parallax" id="contact">
     <div>
       <p>お気軽にお立ち寄りください</p>
       <p>営業時間<br>月〜日 17:00〜1:00</p>
@@ -144,5 +361,51 @@
   <footer>
     <p>&copy; The Whale's Tail - All rights reserved.</p>
   </footer>
+
+  <!-- JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburger = document.querySelector('.hamburger');
+      const navMenu = document.querySelector('.nav-menu');
+      const overlay = document.querySelector('.overlay');
+      const navLinks = document.querySelectorAll('.nav-menu ul li a');
+      
+      // ハンバーガーメニューのトグル機能
+      hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        overlay.classList.toggle('active');
+        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+      });
+      
+      // オーバーレイをクリックしたときにメニューを閉じる
+      overlay.addEventListener('click', function() {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+      
+      // メニューリンクをクリックしたときにメニューを閉じる
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          hamburger.classList.remove('active');
+          navMenu.classList.remove('active');
+          overlay.classList.remove('active');
+          document.body.style.overflow = '';
+          
+          // スムーズスクロール
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            event.preventDefault();
+            const yOffset = -60; // ヘッダーの高さなどを考慮したオフセット
+            const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({top: y, behavior: 'smooth'});
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
